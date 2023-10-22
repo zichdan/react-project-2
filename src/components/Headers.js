@@ -3,17 +3,24 @@ import Button from './Button'
 
 
 const Header = ({ tittle }) => {
+  const onClick = () => {
+    console.log('clicked')
+  
+  }
+
+
   return (
     <header className='header'>
       <h1>{tittle}</h1>
-      <Button color ='green' text='Hello' />
+      <Button color='green' text='Add'
+       onClick={onClick} />
       
     </header>
   );
 };
 
 Header.defaultProps = { 
-    tittle : 'Task Tracker',
+    tittle : 'Task Tracker'
 }
 
 Header.prototype = {
