@@ -1,36 +1,12 @@
-const tasks =[
-   {
-    id: 1,
-    name: "Tast1",
-    text : "Learning React Js",
-    day: 'Oct 22 at 5:55pm',
-    reminder: "true",
-    description:"This is the first React Js Lesson"
-   },
-   {
-    id: 2,
-    name: "Tast2",
-    text : "Learning Next Js",
-    day: "Oct 23 at 10:00am",
-    reminder: "true",
-    description:"This is the first First Next Js Lesson"
-   },
-   {
-    id: 3,
-    name: "Tast3",
-    text : "Learning Django",
-    day: 'Oct 24 at 7:00am',
-    reminder: "False",
-    description:"This is the first Django lesson to Be missed!!!"
-   }
-]
+import Task from "./Task";
 
+const Tasks = ({tasks}) => {
 
-
-const Tasks = () => {
   return (
     <>
-      {tasks.map((task) => (<h3>{task.text}</h3>))}
+      {tasks.map((task) => (
+        <Task key={task.id} task={task}/>
+      ))}
     </>
   );
 };
