@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Header from "./components/Headers"
 import Tasks from "./components/Tasks"
+import AddTask from "./components/AddTask"
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div className="container">
+      <AddTask/>
       <Header/>
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete=
