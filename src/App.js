@@ -32,6 +32,12 @@ function App() {
       },
   ])
 
+
+  // Add Task
+  const addTask = (task) => {
+    console.log('task');
+  }
+
   // delete Task
   const deleteTask = (id) => {
     setTasks(tasks.filter((task) => task.id !== 
@@ -50,7 +56,7 @@ function App() {
 
   return (
     <div className="container">
-      <AddTask/>
+      <AddTask onAdd={addTask} />
       <Header/>
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete=
