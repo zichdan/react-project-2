@@ -2,6 +2,10 @@ import { useState } from "react"
 
 
 const AddTask = () => {
+    const [text, setTask] = useState('')
+    const [day, setDay] = useState('')
+    const [text, setReminder] = useState('')
+
   return (
     <form className="add-form">
         <div className="form-control">
