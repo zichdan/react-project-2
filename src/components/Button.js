@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom';
 
 const Button = ({color, text, onClick}) => {
   return (
