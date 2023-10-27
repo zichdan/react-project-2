@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import Header from "./components/Headers"
 import Tasks from "./components/Tasks"
 import AddTask from "./components/AddTask"
@@ -7,33 +7,19 @@ import AddTask from "./components/AddTask"
 function App() {
   const [ showAddTask, setShowAddTask] = 
   useState(false)
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-        name: "Tast1",
-        text : "Learning React Js",
-        day: 'Oct 22 at 5:55pm',
-        reminder: "true",
-        description:"This is the first React Js Lesson"
-       },
-       {
-        id: 2,
-        name: "Tast2",
-        text : "Learning Next Js",
-        day: "Oct 23 at 10:00am",
-        reminder: "true",
-        description:"This is the first First Next Js Lesson"
-       },
-       {
-        id: 3,
-        name: "Tast3",
-        text : "Learning Django",
-        day: 'Oct 24 at 7:00am',
-        reminder: "False",
-        description:"This is the first Django lesson to Be missed!!!"
-      },
-  ])
+  const [tasks, setTasks] = useState([])
 
+
+  useEffect (() => {
+    const fetchTask = async () => {
+      const req = await fetch ( 'http://localhost:5000/tasks')
+      const data = await req.json()
+
+      console.log(data);
+    }
+
+    fetchTask()
+  }, [])
 
   // Add Task
   const addTask = (task) => {
